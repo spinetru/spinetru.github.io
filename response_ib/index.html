@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Обнаружение инцидента - Personal memo. spinetru</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u041e\u0431\u043d\u0430\u0440\u0443\u0436\u0435\u043d\u0438\u0435 \u0438\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u0430";
+    var mkdocs_page_input_path = "response_ib.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Personal memo. spinetru</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">My personal tips</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../elastic/">Elastic</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../hack_framework/">Framework hack</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Обнаружение инцидента</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_2">Антивирус</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">Необходимость расследования принято считать следующее:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_4">Другие события, требующие проверки:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_5">Поведение ПО, которое может свидетельствовать о наличии инцидента ИБ.</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../tmux/">Tmux</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Personal memo. spinetru</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Обнаружение инцидента</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">Обнаружение инцидента</h1>
+<h2 id="_2">Антивирус</h2>
+<p>Не по каждому событию антивируса следует начинать расследование.</p>
+<h3 id="_3">Необходимость расследования принято считать следующее:</h3>
+<p>o обнаружение взаимодействия с серверами управления C&C;
+o безуспешное лечение зараженных объектов;
+o неоднократное заражение одного и того же компьютера;
+o ошибки в работе антивируса, которые приводят к снижению уровня защищённости.</p>
+<h2 id="_4">Другие события, требующие проверки:</h2>
+<p>•наличие неизвестного ПО в списках автозагрузки;
+•появление неизвестных сервисов в списке сервисов ОС;
+•запуск исполняемых файлов из папок, в которых ПО обычно не располагается
+(например, временные папки системы, системный кеш и другие);
+•загрузка динамических библиотек из папок, в которых обычно данные библиотеки не
+располагаются (например, загрузка системных библиотек из папки, в которой
+располагается загружающий их исполняемый файл);
+•непредвиденная или необычная сетевая активность;
+•непредвиденное повышение привилегий пользователя.</p>
+<h2 id="_5">Поведение ПО, которое может свидетельствовать о наличии инцидента ИБ.</h2>
+<ol>
+<li>Взаимодействие потенциальной угрозы с доменами, которые часто меняют IP-адрес.
+Данный факт может свидетельствовать об использовании злоумышленником Fast flux DNS
+с целью сокрытия реального положения сервера управления.</li>
+<li>Обращения к URL-адресам, которые категорированы в потоках данных об угрозах
+«Лаборатории Касперского». Например, Malware source, Exploit pack landing page и другие.</li>
+<li>Обращения к IP-адресам, которые категорированы в потоках данных об угрозах
+«Лаборатории Касперского». Например, NetScanner (IP, с которых производится
+сканирование сети), DDoS amplifier (IP, с которого производилась DDoS-атака) и другие.</li>
+<li>Дата регистрации, контактное лицо и контактные данные, которые указаны в Whois-
+информации о домене, с которым взаимодействует потенциальная угроза.</li>
+<li>Записи о непредвиденных повышениях привилегий пользователей ИС.</li>
+<li>Увеличение объема трафика по протоколам DNS или/и ICMP.</li>
+<li>Детектирование образцов подобных mimikatz, Windows® Credentials Editor (WCE) и
+инструментов удаленного администрирования.</li>
+</ol>
+<h1 id="_6">Плейбук анализа события ИБ</h1>
+<ol>
+<li>определить источник исходного события(письмо, сведения с прокси, шлюза)</li>
+<li>Определить, на каком этапе KILL CHAIN находится обнаруженная атака</li>
+<li>установить уровень критичности инцидента в зависимости от ценности затронутых информационных активов и
+информации об индикаторе</li>
+</ol>
+<h1 id="_7">Отчет</h1>
+<p>Когда, кем, и с помощью каких инструментов был впервые обнаружен инцидент?<br />
+Что включал в себя инцидент?<br />
+Как проводилось сдерживание, удаление и восстановление?<br />
+На каких этапах реагирования сотрудники, ответственные за ИБ, были наиболее эффективны?<br />
+Что необходимо улучшить в работе сотрудников, ответственных за ИБ?  </p>
+<h1 id="tools-soft">TOOLS, Soft</h1>
+<h2 id="sysinternals">SYSINTERNALS</h2>
+<p>PSTools – набор утилит командной строки для удаленного запуска приложений (PSExec),
+получения списка процессов на локальном или удаленном компьютере (PSList), принудительного
+завершения задач (Pskill), управления службами (PSService). Кроме того, в набор PsTools входят
+служебные программы для перезагрузки или выключения компьютеров, вывода содержимого
+журналов событий и многого другого.</p>
+<p>Process Monitor – программа для наблюдения в реальном времени за действиями различных
+процессов в среде операционной системы Windows. Утилита включает в себя возможности
+мониторинга обращений к реестру, обращений к файловой системе и дополнительно позволяет
+получать более подробную информацию о взаимодействии процессов, использовании ресурсов,
+сетевой активности и операциях ввода-вывода.</p>
+<p>Process Explorer – программа для наблюдения в реальном масштабе времени за действиями
+различных процессов и управления ими в среде операционной системы Windows.</p>
+<h2 id="avz">AVZ</h2>
+<p>Антивирусная утилита AVZ является инструментом для исследования и восстановления системы</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tmux/" class="btn btn-neutral float-right" title="Tmux">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../hack_framework/" class="btn btn-neutral" title="Framework hack"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../hack_framework/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../tmux/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
